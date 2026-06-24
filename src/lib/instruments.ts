@@ -55,7 +55,7 @@ export const STATUTES: Record<string, StatuteEntry> = {
     provision:
       "§ 3344(a) (knowing commercial use of name, voice, signature, photograph, or likeness); 'voice' and 'likeness' extended to digital replicas by SB 683",
     enacted:
-      "Section 3344 long-standing; SB 683 digital-replica and injunctive-relief amendments effective January 1, 2026",
+      "Section 3344 long-standing; SB 683 (signed October 10, 2025) added digital-replica coverage and injunctive relief",
     coversVoice: true,
     coversImage: true,
     coversDigitalReplica: true,
@@ -69,7 +69,7 @@ export const STATUTES: Record<string, StatuteEntry> = {
     sourceUrl:
       "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344.",
     verifyNote:
-      "Section 3344 covers living persons; deceased persons fall under § 3344.1. SB 683 is recent. Verify current law.",
+      "Section 3344 covers living persons; deceased persons fall under § 3344.1. Confirm the effective date of the SB 683 amendments for your facts. Verify current law.",
   },
   NY: {
     jurisdiction: "NY",
@@ -99,7 +99,7 @@ export const STATUTES: Record<string, StatuteEntry> = {
     provision:
       "§ 63.60.050 (use of name, voice, signature, photograph, likeness, or forged digital likeness), as amended by SB 5886",
     enacted:
-      "Personality Rights Act long-standing; SB 5886 forged-digital-likeness amendments effective June 10, 2026",
+      "Personality Rights Act long-standing; SB 5886 forged-digital-likeness amendments signed March 16, 2026 and in effect since June 10, 2026",
     coversVoice: true,
     coversImage: true,
     coversDigitalReplica: true,
@@ -112,7 +112,7 @@ export const STATUTES: Record<string, StatuteEntry> = {
     ],
     sourceUrl: "https://app.leg.wa.gov/rcw/default.aspx?cite=63.60&full=true",
     verifyNote:
-      "The forged-digital-likeness amendments take effect June 10, 2026. Confirm the effective date applies to your facts and verify current law.",
+      "The forged-digital-likeness amendments are in effect. Confirm the law as applied to your facts and verify current law.",
   },
 };
 
