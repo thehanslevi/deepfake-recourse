@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCase } from "@/lib/data";
 import { TriagePanel } from "@/components/triage-panel";
+import { AssemblyPanel } from "@/components/assembly-panel";
+import type { InstrumentKind } from "@/lib/types";
 import {
   clonedWhatLabel,
   formatDate,
@@ -104,6 +106,41 @@ export default async function CasePage({
           </div>
           <div className="mt-5">
             <TriagePanel caseId={c.id} initialTriage={c.triage} />
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <div className="flex items-baseline gap-3">
+            <span className="font-mono text-[0.7rem] tracking-[0.18em] text-accent">
+              03
+            </span>
+            <h2 className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink">
+              Assembly
+            </h2>
+          </div>
+          <div className="mt-5">
+            {!c.triage ? (
+              <p className="font-serif text-base leading-relaxed text-ink/70">
+                Run triage first. Assembly drafts for the instruments triage
+                identifies.
+              </p>
+            ) : c.triage.routedOut ? (
+              <p className="font-serif text-base leading-relaxed text-ink/70">
+                This case was routed out. Timbre does not draft for routed-out
+                cases. See the routing above for where to go instead.
+              </p>
+            ) : (
+              <AssemblyPanel
+                caseId={c.id}
+                availableKinds={
+                  c.triage.instruments.map(
+                    (i) => i.kind,
+                  ) as InstrumentKind[]
+                }
+                initialDraft={c.draft}
+                initialEvidence={c.evidence}
+              />
+            )}
           </div>
         </div>
       </div>

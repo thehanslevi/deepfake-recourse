@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import type {
   Confidence,
   Instrument,
@@ -212,6 +213,7 @@ export function TriagePanel({
   caseId: string;
   initialTriage: TriageRead | null;
 }) {
+  const router = useRouter();
   const [triage, setTriage] = useState<TriageRead | null>(initialTriage);
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
@@ -233,6 +235,9 @@ export function TriagePanel({
       }
       setTriage(data.triage as TriageRead);
       setStatus("idle");
+      // Refresh so the server-rendered assembly section appears for a
+      // non-routed-out read.
+      router.refresh();
     } catch {
       setError("Could not reach the triage service. Try again.");
       setStatus("error");

@@ -1,7 +1,7 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
 import { seedCases } from "./seed";
-import type { Case, Intake, TriageRead } from "./types";
+import type { Case, Draft, EvidenceItem, Intake, TriageRead } from "./types";
 
 // Data-access layer. This is the ONLY way the rest of the app reads or writes
 // cases. No component, page, or route touches storage directly. Today it is
@@ -56,5 +56,33 @@ export async function attachTriage(
   if (!found) return null;
   found.triage = triage;
   found.status = "triaged";
+  return found;
+}
+
+// Attach the draft and evidence package to a case. Storage only; the Anthropic
+// call lives in the assembly route.
+export async function attachDraft(
+  id: string,
+  draft: Draft,
+  evidence: EvidenceItem[],
+): Promise<Case | null> {
+  const found = getStore().cases.find((c) => c.id === id);
+  if (!found) return null;
+  found.draft = draft;
+  found.evidence = evidence;
+  found.status = "drafted";
+  return found;
+}
+
+// Save user edits to the draft body. Marks the draft edited and the case
+// reviewed.
+export async function saveDraftEdits(
+  id: string,
+  body: string,
+): Promise<Case | null> {
+  const found = getStore().cases.find((c) => c.id === id);
+  if (!found || !found.draft) return null;
+  found.draft = { ...found.draft, body, edited: true };
+  found.status = "reviewed";
   return found;
 }

@@ -104,14 +104,38 @@ export interface TriageRead {
   generatedAt: string; // ISO timestamp
 }
 
+// Draft (Phase 3). The assembled takedown / demand notice, tuned to one
+// chosen instrument. It is always a draft; nothing is addressed-and-sent from
+// the app. `body` is editable by the user before export.
 export interface Draft {
-  // Populated in Phase 3 (assembly).
-  _phase3?: never;
+  instrumentKind: InstrumentKind;
+  instrumentTitle: string;
+  title: string;
+  recipient: string; // role/placeholder, never a real fetched address
+  body: string;
+  model: string;
+  generatedAt: string;
+  edited: boolean;
 }
 
+// Evidence item (Phase 3). Built deterministically from the intake, not by the
+// model. Each item records when it was added (the add-log) and a SHA-256
+// fingerprint of its content. This detects naive edits to the recorded
+// material. It is not a tamper-proof seal and the UI does not claim to be one.
+export type EvidenceKind =
+  | "hosted_url"
+  | "platform"
+  | "incident_description"
+  | "found_date"
+  | "consent_scope";
+
 export interface EvidenceItem {
-  // Populated in Phase 3/4 (evidence package).
-  _phase3or4?: never;
+  id: string;
+  label: string;
+  kind: EvidenceKind;
+  value: string;
+  addedAt: string; // ISO timestamp the item entered the package
+  fingerprint: string; // sha256 hex of `value`
 }
 
 export interface Case {
