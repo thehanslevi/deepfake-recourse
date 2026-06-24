@@ -1,6 +1,6 @@
 export function SiteFooter() {
   return (
-    <footer id="boundary" className="border-t border-line">
+    <footer id="boundary" className="no-print border-t border-line">
       <div className="mx-auto w-full max-w-4xl px-6 py-8">
         <p className="max-w-2xl font-mono text-xs leading-relaxed text-muted">
           Timbre <span className="text-accent">assembles and drafts</span>. A

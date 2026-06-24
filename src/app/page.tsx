@@ -26,15 +26,20 @@ export default function Home() {
           >
             Start an intake →
           </Link>
+          <Link
+            href="/cases/sample-voice-actor-ad/file"
+            className="no-underline hover:underline"
+          >
+            See a worked example →
+          </Link>
           <Link href="/cases" className="no-underline hover:underline">
             View cases
           </Link>
-          <a href="#boundary">Read the boundary ↓</a>
         </div>
 
         <div className="mt-20 border-t border-line pt-6">
           <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-            Phase 1. Structured intake and case storage. No AI yet.
+            Intake. Triage. Drafting. Record. The full recourse loop.
           </p>
         </div>
       </div>

@@ -51,3 +51,19 @@ a {
 a:hover {
   color: var(--accent-ink);
 }
+
+/* Single-file export: print the assembled case file as one clean PDF.
+   Hide app chrome and interactive controls; flatten to ink-on-white. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+}

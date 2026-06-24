@@ -65,6 +65,11 @@ export default async function CasesPage() {
                   <span className="font-serif text-lg text-ink group-hover:text-accent">
                     {incidentTypeLabel(c.intake.incidentType)}
                     <span className="text-muted"> · {clonedWhatLabel(c.intake.clonedWhat)}</span>
+                    {c.sample ? (
+                      <span className="ml-3 border border-accent px-1.5 py-0.5 align-middle font-mono text-[0.6rem] uppercase tracking-[0.16em] text-accent">
+                        Sample
+                      </span>
+                    ) : null}
                   </span>
                   <span className="flex items-baseline gap-4 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
                     <span>{stateLabel(c.intake.state)}</span>

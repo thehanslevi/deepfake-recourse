@@ -50,18 +50,29 @@ export default async function CasePage({
       <div className="mx-auto w-full max-w-4xl px-6 py-16 md:py-24">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-accent">
-            Case file
+            Case
           </p>
-          <Link
-            href="/cases"
-            className="font-mono text-sm no-underline hover:underline"
-          >
-            ← All cases
-          </Link>
+          <div className="flex items-center gap-5 font-mono text-sm">
+            <Link
+              href={`/cases/${c.id}/file`}
+              className="no-underline hover:underline"
+            >
+              Case file / export →
+            </Link>
+            <Link href="/cases" className="no-underline hover:underline">
+              ← All cases
+            </Link>
+          </div>
         </div>
         <div aria-hidden className="mt-5 h-px w-10 bg-accent" />
 
-        <h1 className="mt-8 max-w-2xl font-serif text-3xl font-medium leading-[1.1] tracking-[-0.01em] md:text-4xl">
+        {c.sample ? (
+          <p className="mt-8 inline-block border border-accent px-2 py-0.5 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-accent">
+            Sample · fictional
+          </p>
+        ) : null}
+
+        <h1 className="mt-4 max-w-2xl font-serif text-3xl font-medium leading-[1.1] tracking-[-0.01em] md:text-4xl">
           {incidentTypeLabel(intake.incidentType)}
         </h1>
 

@@ -10,7 +10,7 @@ const KIND_LABEL: Record<InstrumentKind, string> = {
   dmca: "DMCA takedown notice",
 };
 
-function EvidencePackageView({ evidence }: { evidence: EvidenceItem[] }) {
+export function EvidencePackageView({ evidence }: { evidence: EvidenceItem[] }) {
   if (evidence.length === 0) return null;
   return (
     <div className="border border-line bg-surface/40">

@@ -169,7 +169,7 @@ function RoutedOutBanner({ routedOut }: { routedOut: RoutedOut }) {
   );
 }
 
-function TriageView({ triage }: { triage: TriageRead }) {
+export function TriageView({ triage }: { triage: TriageRead }) {
   return (
     <div className="space-y-6">
       {triage.summary ? (

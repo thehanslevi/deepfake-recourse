@@ -146,4 +146,7 @@ export interface Case {
   triage: TriageRead | null;
   draft: Draft | null;
   evidence: EvidenceItem[];
+  // True for the clearly-fictional seeded worked examples. Surfaced in the UI
+  // so a sample is never mistaken for a real person's case.
+  sample?: boolean;
 }
