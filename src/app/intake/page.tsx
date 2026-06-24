@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { IntakeForm } from "@/components/intake-form";
 
 export const metadata: Metadata = {
@@ -23,6 +24,19 @@ export default function IntakePage() {
           stores it. Nothing is analyzed or sent yet. You can review what was
           saved on the next screen.
         </p>
+
+        <div className="mt-8 max-w-xl border border-line bg-surface/40 px-5 py-4">
+          <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+            Demonstration build
+          </p>
+          <p className="mt-2 font-serif text-base leading-relaxed text-ink/80">
+            This is a demonstration build. The three{" "}
+            <Link href="/cases">sample cases</Link> are the best way to see the
+            full pipeline from intake to drafted notice. A case you create here
+            is not saved permanently yet, so it may not be here if you come back
+            later.
+          </p>
+        </div>
 
         <div className="mt-12">
           <IntakeForm />
