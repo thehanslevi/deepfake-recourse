@@ -22,7 +22,7 @@ export default function Home() {
         <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-sm">
           <Link
             href="/intake"
-            className="border border-accent bg-accent px-5 py-2 text-[var(--ground)] no-underline transition-colors hover:bg-accent-ink"
+            className="border border-accent bg-accent px-5 py-2 btn-accent no-underline transition-colors hover:bg-accent-ink"
           >
             Start an intake →
           </Link>

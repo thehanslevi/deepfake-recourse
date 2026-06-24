@@ -18,6 +18,7 @@
   --muted: #5f665a; /* low-contrast meta and notes */
   --accent: #2f2bd1; /* considered ultramarine — the single accent */
   --accent-ink: #1c19a0; /* accent hover/active */
+  --accent-foreground: #ffffff; /* label color on accent fills — white for AA contrast */
   --line: rgba(22, 24, 15, 0.18); /* hairline rules, not hard bars */
 }
 
@@ -28,6 +29,7 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-foreground: var(--accent-foreground);
   --color-line: var(--line);
 
   --font-mono: var(--font-plex-mono);
@@ -50,6 +52,16 @@ a {
 
 a:hover {
   color: var(--accent-ink);
+}
+
+/* Primary buttons on the accent fill. This rule is unlayered and class-scoped
+   so it reliably beats the global `a` link color above, which is also unlayered
+   and would otherwise tint <a> buttons accent-on-accent (invisible). White
+   label on the ultramarine fill clears WCAG AA. */
+.btn-accent,
+.btn-accent:hover,
+.btn-accent:focus {
+  color: var(--accent-foreground);
 }
 
 /* Single-file export: print the assembled case file as one clean PDF.

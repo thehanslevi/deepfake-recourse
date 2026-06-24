@@ -126,7 +126,7 @@ function DraftView({
             type="button"
             onClick={save}
             disabled={saveState === "saving"}
-            className="border border-accent bg-accent px-5 py-2 font-mono text-sm text-[var(--ground)] no-underline transition-colors hover:bg-accent-ink disabled:opacity-60"
+            className="border border-accent bg-accent px-5 py-2 font-mono text-sm btn-accent no-underline transition-colors hover:bg-accent-ink disabled:opacity-70"
           >
             {saveState === "saving" ? "Saving…" : "Save edits"}
           </button>
@@ -252,7 +252,7 @@ export function AssemblyPanel({
         type="button"
         onClick={run}
         disabled={status === "loading"}
-        className="border border-accent bg-accent px-5 py-2 font-mono text-sm text-[var(--ground)] no-underline transition-colors hover:bg-accent-ink disabled:opacity-60"
+        className="border border-accent bg-accent px-5 py-2 font-mono text-sm btn-accent no-underline transition-colors hover:bg-accent-ink disabled:opacity-70"
       >
         {status === "loading" ? "Drafting…" : "Draft notice →"}
       </button>

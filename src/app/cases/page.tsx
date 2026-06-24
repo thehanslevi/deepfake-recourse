@@ -48,7 +48,7 @@ export default async function CasesPage() {
             <div className="mt-6">
               <Link
                 href="/intake"
-                className="border border-accent bg-accent px-5 py-2 font-mono text-sm text-[var(--ground)] no-underline transition-colors hover:bg-accent-ink"
+                className="border border-accent bg-accent px-5 py-2 font-mono text-sm btn-accent no-underline transition-colors hover:bg-accent-ink"
               >
                 Start an intake →
               </Link>
