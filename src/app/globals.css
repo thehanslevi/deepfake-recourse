@@ -8,16 +8,22 @@
   - One accent: a deliberate take on the web-native hyperlink.
 */
 :root {
-  --paper: #f2f0e9; /* warm made-object paper, not SaaS white */
-  --ink: #18160f; /* warm near-black */
-  --muted: #6f6a5c; /* warm gray for meta and notes */
+  /* Ground: a soft curated celadon, not warm paper and not SaaS white. It is a
+     deliberate gallery-leaning ground that lets the ultramarine accent read as
+     an intentional pairing. --surface lifts framed objects (cards, inputs) off
+     the ground so the composition is not flat. */
+  --ground: #dfe4dc; /* page ground */
+  --surface: #edf0ea; /* lifted made-object surface */
+  --ink: #16180f; /* near-black with a faint green cast */
+  --muted: #5f665a; /* low-contrast meta and notes */
   --accent: #2f2bd1; /* considered ultramarine — the single accent */
   --accent-ink: #1c19a0; /* accent hover/active */
-  --line: rgba(24, 22, 15, 0.14); /* hairline rules, not hard bars */
+  --line: rgba(22, 24, 15, 0.18); /* hairline rules, not hard bars */
 }
 
 @theme inline {
-  --color-paper: var(--paper);
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
@@ -29,7 +35,7 @@
 }
 
 body {
-  background: var(--paper);
+  background: var(--ground);
   color: var(--ink);
   font-family: var(--font-spectral), Georgia, "Times New Roman", serif;
 }
