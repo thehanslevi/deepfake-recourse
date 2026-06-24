@@ -1,25 +1,47 @@
 @import "tailwindcss";
 
+/*
+  Timbre visual identity — net-literate but trust-dominant.
+  Tokens are the single source of truth; every later phase inherits them.
+  - Mono (Plex Mono): restrained surface signal — labels, meta, structural links.
+  - Serif (Spectral): the dominant, composed reading voice — headlines, legal body.
+  - One accent: a deliberate take on the web-native hyperlink.
+*/
 :root {
-  --background: #f7f5f0;
-  --foreground: #111111;
-  --rule: #111111;
-  --accent: #c8341f;
-  --muted: #6b6b6b;
+  --paper: #f2f0e9; /* warm made-object paper, not SaaS white */
+  --ink: #18160f; /* warm near-black */
+  --muted: #6f6a5c; /* warm gray for meta and notes */
+  --accent: #2f2bd1; /* considered ultramarine — the single accent */
+  --accent-ink: #1c19a0; /* accent hover/active */
+  --line: rgba(24, 22, 15, 0.14); /* hairline rules, not hard bars */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-rule: var(--rule);
-  --color-accent: var(--accent);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
   --color-muted: var(--muted);
-  --font-sans: var(--font-space-grotesk);
-  --font-serif: var(--font-newsreader);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-line: var(--line);
+
+  --font-mono: var(--font-plex-mono);
+  --font-serif: var(--font-spectral);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-spectral), Georgia, "Times New Roman", serif;
+}
+
+/* Plain structural links, treated as a deliberate design choice. */
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent-ink);
 }
