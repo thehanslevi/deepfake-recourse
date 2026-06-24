@@ -14,7 +14,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Likeness Recourse",
+  title: "Timbre",
   description:
     "A recourse pipeline for people whose voice or likeness was cloned without consent. The tool assembles and drafts; a human files.",
 };

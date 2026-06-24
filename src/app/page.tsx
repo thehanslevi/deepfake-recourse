@@ -4,7 +4,7 @@ export default function Home() {
       <header className="border-b-2 border-rule">
         <div className="mx-auto w-full max-w-5xl px-6 py-4 flex items-center justify-between">
           <span className="font-sans text-sm font-medium uppercase tracking-[0.2em]">
-            Likeness Recourse
+            Timbre
           </span>
           <span className="font-sans text-xs uppercase tracking-[0.2em] text-muted">
             v1 — scaffold
