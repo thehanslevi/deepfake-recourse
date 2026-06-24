@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCase } from "@/lib/data";
+import { TriagePanel } from "@/components/triage-panel";
 import {
   clonedWhatLabel,
   formatDate,
@@ -92,15 +93,18 @@ export default async function CasePage({
           </dl>
         </div>
 
-        <div className="mt-8 border border-line px-5 py-5">
-          <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-            Next in the pipeline
-          </p>
-          <p className="mt-3 font-serif text-base leading-relaxed text-ink/80">
-            Triage maps these facts to the law that applies. Assembly drafts the
-            notice and packages the evidence. Both land in later phases. Timbre
-            assembles and drafts. A human files.
-          </p>
+        <div className="mt-12">
+          <div className="flex items-baseline gap-3">
+            <span className="font-mono text-[0.7rem] tracking-[0.18em] text-accent">
+              02
+            </span>
+            <h2 className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink">
+              Triage
+            </h2>
+          </div>
+          <div className="mt-5">
+            <TriagePanel caseId={c.id} initialTriage={c.triage} />
+          </div>
         </div>
       </div>
     </section>

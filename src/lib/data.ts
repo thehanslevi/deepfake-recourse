@@ -1,7 +1,7 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
 import { seedCases } from "./seed";
-import type { Case, Intake } from "./types";
+import type { Case, Intake, TriageRead } from "./types";
 
 // Data-access layer. This is the ONLY way the rest of the app reads or writes
 // cases. No component, page, or route touches storage directly. Today it is
@@ -44,4 +44,17 @@ export async function addCase(intake: Intake): Promise<Case> {
   };
   getStore().cases.unshift(newCase);
   return newCase;
+}
+
+// Attach a triage read to a case and advance its status. Storage only; the
+// Anthropic call lives in the triage route, not here.
+export async function attachTriage(
+  id: string,
+  triage: TriageRead,
+): Promise<Case | null> {
+  const found = getStore().cases.find((c) => c.id === id);
+  if (!found) return null;
+  found.triage = triage;
+  found.status = "triaged";
+  return found;
 }

@@ -51,12 +51,57 @@ export interface Intake {
   state: string;
 }
 
-// Later-phase shapes. Declared now, open on purpose, so `Case` is stable.
-// The optional `never` member keeps these as named, extensible interfaces
-// without tripping empty-interface lint while they hold no fields yet.
+// Triage read (Phase 2). The structured, confidence-marked output of the
+// triage route. Either the case is routed out, or it carries a list of
+// applicable instruments. Never both.
+
+export type Confidence = "high" | "medium" | "low";
+
+export interface SourceTrace {
+  statute: string; // e.g. "Tenn. Code Ann. § 47-25-1101 et seq."
+  provision: string; // the specific provision relied on
+  url: string; // official or authoritative source
+}
+
+export type InstrumentKind =
+  | "state_right_of_publicity"
+  | "platform_tos"
+  | "dmca";
+
+export interface Instrument {
+  kind: InstrumentKind;
+  title: string;
+  confidence: Confidence;
+  // Plain-language explanation of why this instrument applies to the facts.
+  rationale: string;
+  // For a statute: the elements that must be met. Empty for non-statute kinds.
+  elements: string[];
+  // For a platform ToS channel: where and what to file.
+  reportingChannel: string;
+  source: SourceTrace | null;
+  // A standing reminder that the law is in flux.
+  verifyNote: string;
+}
+
+export interface RoutedOut {
+  category: "ncii" | "election_deepfake" | "fraud";
+  label: string;
+  // Why the facts triggered routing out.
+  reason: string;
+  resourceName: string;
+  resourceDetail: string;
+  resourceUrl: string;
+}
+
 export interface TriageRead {
-  // Populated in Phase 2 (triage).
-  _phase2?: never;
+  // When set, triage stops here and does not proceed toward drafting.
+  routedOut: RoutedOut | null;
+  // Applicable instruments. Empty when routed out.
+  instruments: Instrument[];
+  // Overall plain-language summary of the read.
+  summary: string;
+  model: string;
+  generatedAt: string; // ISO timestamp
 }
 
 export interface Draft {
