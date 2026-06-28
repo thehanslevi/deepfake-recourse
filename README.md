@@ -58,7 +58,7 @@ Next.js (App Router) and TypeScript, deployed on Vercel. The legal content lives
 
 ## Why I built it
 
-Built by Hannah Levinson. More at [hrlevinson.com](https://hrlevinson.com).
+Built by Hannah Levinson • more at hrlevinson.com
 
 Timbre is one of three projects in a portfolio built around a single conviction: AI systems increasingly make or shape consequential decisions about people, and the people on the receiving end need tools that give them leverage back. Each project does real work, draws on born-digital records, and is built around the same governance line, the software assembles, structures, or scores, and a human makes the authoritative call. None of them pretends to be the decision-maker. That boundary is the point.
 
