@@ -12,13 +12,13 @@ type Store = { cases: Case[] };
 
 // Hang the store off globalThis so it survives module reloads (dev HMR, and
 // warm serverless instances). A database removes this concern entirely.
-const globalForStore = globalThis as unknown as { __timbreStore?: Store };
+const globalForStore = globalThis as unknown as { __dfrStore?: Store };
 
 function getStore(): Store {
-  if (!globalForStore.__timbreStore) {
-    globalForStore.__timbreStore = { cases: seedCases.map((c) => ({ ...c })) };
+  if (!globalForStore.__dfrStore) {
+    globalForStore.__dfrStore = { cases: seedCases.map((c) => ({ ...c })) };
   }
-  return globalForStore.__timbreStore;
+  return globalForStore.__dfrStore;
 }
 
 // Newest first.

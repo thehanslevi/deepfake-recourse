@@ -8,7 +8,7 @@ export function SiteHeader() {
           href="/"
           className="font-mono text-sm tracking-tight text-ink no-underline hover:text-ink"
         >
-          timbre<span className="text-accent">*</span>
+          deepfake recourse<span className="text-accent">*</span>
         </Link>
         <nav className="flex items-baseline gap-5 font-mono text-[0.7rem] uppercase tracking-[0.18em]">
           <Link href="/intake" className="text-accent no-underline hover:underline">

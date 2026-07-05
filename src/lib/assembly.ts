@@ -105,7 +105,7 @@ function instrumentContext(intake: Intake, kind: InstrumentKind): string {
 
 function buildSystemPrompt(): string {
   return [
-    "You are the assembly step of Timbre. You draft a takedown or demand notice for a person whose voice or likeness was cloned without consent.",
+    "You are the assembly step of Deepfake Recourse. You draft a takedown or demand notice for a person whose voice or likeness was cloned without consent.",
     "",
     "Hard boundaries:",
     "- What you produce is a DRAFT for the user to review and edit. Nothing is sent from the tool. Do not address-and-send. Do not invent a real recipient email or postal address; use a clear bracketed placeholder.",

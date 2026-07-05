@@ -1,4 +1,4 @@
-// Domain types for Timbre.
+// Domain types for Deepfake Recourse.
 //
 // A `Case` is the atomic object. In Phase 1 it carries the intake fields and a
 // status. The triage read (Phase 2), the draft (Phase 3), and the evidence log

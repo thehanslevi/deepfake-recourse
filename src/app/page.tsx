@@ -14,8 +14,8 @@ export default function Home() {
         </h1>
 
         <p className="mt-8 max-w-xl font-serif text-lg leading-relaxed text-ink/80 md:text-xl">
-          Timbre takes the evidence and assembles a filing-ready takedown and
-          claim package, grounded in the law that actually applies. Timbre
+          Deepfake Recourse takes the evidence and assembles a filing-ready takedown and
+          claim package, grounded in the law that actually applies. Deepfake Recourse
           assembles and drafts. A human files.
         </p>
 

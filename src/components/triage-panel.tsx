@@ -133,7 +133,7 @@ function RoutedOutBanner({ routedOut }: { routedOut: RoutedOut }) {
       </div>
       <div className="space-y-4 px-5 py-5">
         <p className="font-serif text-lg leading-relaxed text-ink">
-          Timbre does not draft for this case. This is outside the lane Timbre
+          Deepfake Recourse does not draft for this case. This is outside the lane Deepfake Recourse
           can responsibly handle.
         </p>
         {routedOut.reason ? (
@@ -190,7 +190,7 @@ export function TriageView({ triage }: { triage: TriageRead }) {
           <div className="border border-line px-5 py-4">
             <p className="font-serif text-base leading-relaxed text-ink/80">
               These are the instruments that may apply. The next step drafts the
-              notice tuned to one of them. Timbre drafts; a human files. Nothing
+              notice tuned to one of them. Deepfake Recourse drafts; a human files. Nothing
               is sent from here.
             </p>
           </div>

@@ -106,6 +106,7 @@ export function IntakeForm() {
             id="description"
             name="description"
             required
+            maxLength={5000}
             rows={5}
             placeholder="A cloned version of my voice is being used in an ad I never agreed to."
             className={inputClass}
@@ -151,6 +152,7 @@ export function IntakeForm() {
             name="hostUrl"
             type="url"
             required
+            maxLength={2000}
             placeholder="https://"
             className={inputClass}
           />
@@ -162,6 +164,7 @@ export function IntakeForm() {
             name="platform"
             type="text"
             required
+            maxLength={200}
             placeholder="YouTube, Instagram, TikTok, Spotify, a website"
             className={inputClass}
           />
@@ -219,6 +222,7 @@ export function IntakeForm() {
               name="consentScope"
               rows={3}
               required
+              maxLength={3000}
               placeholder="I licensed my voice for one campaign in 2024. This use was not part of it."
               className={inputClass}
             />

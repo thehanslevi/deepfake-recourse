@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
 import { attachTriage, getCase } from "@/lib/data";
 import { TriageError, runTriage } from "@/lib/triage";
+import { clientIp, rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
+
+// Each triage call spends Anthropic credits; cap per IP.
+const LIMIT = 6;
+const WINDOW_MS = 10 * 60 * 1000;
 
 // POST /api/triage  { caseId }
 // Loads the stored intake through the data layer, runs the Anthropic triage
@@ -10,6 +15,17 @@ export const runtime = "nodejs";
 // returns a clear JSON error the UI can render; it never throws to a white
 // screen.
 export async function POST(request: Request) {
+  const rl = rateLimit(`triage:${clientIp(request)}`, LIMIT, WINDOW_MS);
+  if (!rl.ok) {
+    return NextResponse.json(
+      {
+        ok: false,
+        error: `Too many triage requests. Try again in about ${Math.max(1, Math.ceil(rl.retryAfterSeconds / 60))} minute(s).`,
+      },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSeconds) } },
+    );
+  }
+
   let caseId: string;
   try {
     const body = await request.json();

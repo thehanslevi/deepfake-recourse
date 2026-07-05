@@ -16,7 +16,7 @@ import {
 } from "@/lib/labels";
 
 export const metadata: Metadata = {
-  title: "Case — Timbre",
+  title: "Case — Deepfake Recourse",
 };
 
 export const dynamic = "force-dynamic";
@@ -137,7 +137,7 @@ export default async function CasePage({
               </p>
             ) : c.triage.routedOut ? (
               <p className="font-serif text-base leading-relaxed text-ink/70">
-                This case was routed out. Timbre does not draft for routed-out
+                This case was routed out. Deepfake Recourse does not draft for routed-out
                 cases. See the routing above for where to go instead.
               </p>
             ) : (

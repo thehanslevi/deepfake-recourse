@@ -138,7 +138,7 @@ function DraftView({
         </div>
 
         <p className="border-t border-line pt-4 font-mono text-[0.7rem] leading-relaxed text-muted">
-          This is a draft. Timbre does not address or send it. You review, edit,
+          This is a draft. Deepfake Recourse does not address or send it. You review, edit,
           and file it yourself. Not legal advice. Verify current law.
         </p>
       </div>

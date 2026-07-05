@@ -273,7 +273,7 @@ const C_TRIAGE: TriageRead = {
   },
   instruments: [],
   summary:
-    "This case is routed out. The cloned voice is being used to defraud people of money, so the priority is reporting the ongoing fraud to the authorities. A right-of-publicity claim may exist in parallel, but Timbre does not draft for this lane.",
+    "This case is routed out. The cloned voice is being used to defraud people of money, so the priority is reporting the ongoing fraud to the authorities. A right-of-publicity claim may exist in parallel, but Deepfake Recourse does not draft for this lane.",
   model: "claude-sonnet-4-6",
   generatedAt: C_DATE,
 };

@@ -10,7 +10,7 @@ import {
 } from "@/lib/labels";
 
 export const metadata: Metadata = {
-  title: "Cases — Timbre",
+  title: "Cases — Deepfake Recourse",
 };
 
 // Always read fresh from the data layer.

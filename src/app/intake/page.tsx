@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IntakeForm } from "@/components/intake-form";
 
 export const metadata: Metadata = {
-  title: "Intake — Timbre",
+  title: "Intake — Deepfake Recourse",
 };
 
 export default function IntakePage() {
@@ -16,11 +16,11 @@ export default function IntakePage() {
         <div aria-hidden className="mt-5 h-px w-10 bg-accent" />
 
         <h1 className="mt-8 max-w-2xl font-serif text-3xl font-medium leading-[1.1] tracking-[-0.01em] md:text-5xl">
-          Tell Timbre what happened.
+          Tell Deepfake Recourse what happened.
         </h1>
 
         <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-ink/80">
-          This is structured capture. Timbre records the facts of your case and
+          This is structured capture. Deepfake Recourse records the facts of your case and
           stores it. Nothing is analyzed or sent yet. You can review what was
           saved on the next screen.
         </p>

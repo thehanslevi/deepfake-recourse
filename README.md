@@ -1,8 +1,8 @@
-# Timbre
+# Deepfake Recourse
 
 **A recourse tool for people whose voice or likeness was cloned by AI without their consent.**
 
-Live demo: https://timbre-likeness-recourse.vercel.app
+Live demo: https://deepfake-recourse.vercel.app
 
 ---
 
@@ -14,9 +14,9 @@ Today, an individual in this situation faces a wall. Enterprise tools exist to *
 
 The gap is the work in between. Knowing which law applies to your situation, drafting the notice, assembling the evidence. That work is what stands between a person and a remedy, and right now there is nothing that does it for them.
 
-## What Timbre does
+## What Deepfake Recourse does
 
-Timbre takes a person from "my voice was cloned" to a ready-to-file takedown-and-claim package. It does four things:
+Deepfake Recourse takes a person from "my voice was cloned" to a ready-to-file takedown-and-claim package. It does four things:
 
 1. **Intake.** It captures what happened in structured form: what was cloned, where it is hosted, when it was found, and the person's state.
 2. **Triage.** It identifies which legal instrument actually applies to the facts, grounded in the right-of-publicity law of the person's state and the host platform's reporting rules. Every read is marked with a confidence level and a source.
@@ -25,15 +25,15 @@ Timbre takes a person from "my voice was cloned" to a ready-to-file takedown-and
 
 The triage and drafting steps are real AI, not a form wizard. They make live calls to a large language model that maps the facts to the applicable law and produces the draft.
 
-## The line Timbre does not cross
+## The line Deepfake Recourse does not cross
 
 This is the most important part, and it is built into the architecture, not added as a disclaimer.
 
-**Timbre assembles and drafts. A human files.** It never sends a notice automatically. It never tells a person they have a winning case. It identifies the instrument, drafts the notice, packages the evidence, and stops at a review gate. This is the line that separates a helpful tool from the unauthorized practice of law, and it is enforced in the code, not just stated in the interface.
+**Deepfake Recourse assembles and drafts. A human files.** It never sends a notice automatically. It never tells a person they have a winning case. It identifies the instrument, drafts the notice, packages the evidence, and stops at a review gate. This is the line that separates a helpful tool from the unauthorized practice of law, and it is enforced in the code, not just stated in the interface.
 
-**Timbre knows the edge of its own competence.** Some situations are more serious and more dangerous than a cloned ad, above all nonconsensual intimate imagery. Timbre is built to *recognize* those cases and route them to the right specialized resource (for example, the Cyber Civil Rights Initiative for intimate-image abuse), rather than attempt to handle them. Knowing what not to touch is a feature.
+**Deepfake Recourse knows the edge of its own competence.** Some situations are more serious and more dangerous than a cloned ad, above all nonconsensual intimate imagery. Deepfake Recourse is built to *recognize* those cases and route them to the right specialized resource (for example, the Cyber Civil Rights Initiative for intimate-image abuse), rather than attempt to handle them. Knowing what not to touch is a feature.
 
-**Timbre is grounded in law that actually exists.** The legal content is drawn from enacted state statutes, verified against current law, and every output carries a note to verify the law as it stands. It does not depend on any pending legislation passing.
+**Deepfake Recourse is grounded in law that actually exists.** The legal content is drawn from enacted state statutes, verified against current law, and every output carries a note to verify the law as it stands. It does not depend on any pending legislation passing.
 
 ## Who it is for
 
@@ -60,11 +60,11 @@ Next.js (App Router) and TypeScript, deployed on Vercel. The legal content lives
 
 Built by Hannah Levinson • more at [hrlevinson.com](https://hrlevinson.com)
 
-Timbre is one of three projects in a portfolio built around a single conviction: AI systems increasingly make or shape consequential decisions about people, and the people on the receiving end need tools that give them leverage back. Each project does real work, draws on born-digital records, and is built around the same governance line, the software assembles, structures, or scores, and a human makes the authoritative call. None of them pretends to be the decision-maker. That boundary is the point.
+Deepfake Recourse is one of three projects in a portfolio built around a single conviction: AI systems increasingly make or shape consequential decisions about people, and the people on the receiving end need tools that give them leverage back. Each project does real work, draws on born-digital records, and is built around the same governance line, the software assembles, structures, or scores, and a human makes the authoritative call. None of them pretends to be the decision-maker. That boundary is the point.
 
 The three take that idea into different arenas:
 
-- **Timbre** (this project) — individual recourse. Gives a person whose voice or likeness was cloned a way to act, where before only institutions had the means.
+- **Deepfake Recourse** (this project) — individual recourse. Gives a person whose voice or likeness was cloned a way to act, where before only institutions had the means.
 - **[Tessera](https://github.com/thehanslevi/tessera-screening-engine)** — collective accountability. An evidence-aggregation engine that turns algorithmic tenant-screening denials into structured, consented evidence for attorneys, organizers, and regulators. A synthetic-data research prototype, with the same assemble-not-advise boundary enforced through layered human gates.
 - **[AI Vendor Risk](https://github.com/thehanslevi/ai-vendor-risk)** — institutional governance. A tool that scores AI vendors against a seven-dimension governance rubric to give review teams consistent, defensible first-pass assessments a human ratifies or overrides.
 

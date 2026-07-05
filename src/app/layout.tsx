@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Spectral } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -20,9 +21,24 @@ const spectral = Spectral({
 });
 
 export const metadata: Metadata = {
-  title: "Timbre",
+  metadataBase: new URL("https://deepfake-recourse.vercel.app"),
+  title: "Deepfake Recourse",
   description:
-    "Recourse for a voice or likeness cloned without consent. Timbre assembles and drafts. A human files.",
+    "Recourse for a voice or likeness cloned without consent. Deepfake Recourse assembles and drafts. A human files.",
+  openGraph: {
+    title: "Deepfake Recourse",
+    description:
+      "Recourse for a voice or likeness cloned without consent. The tool assembles and drafts. A human files.",
+    url: "https://deepfake-recourse.vercel.app",
+    siteName: "Deepfake Recourse",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deepfake Recourse",
+    description:
+      "Recourse for a voice or likeness cloned without consent. The tool assembles and drafts. A human files.",
+  },
 };
 
 export default function RootLayout({
@@ -39,6 +55,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex flex-1 flex-col">{children}</main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );

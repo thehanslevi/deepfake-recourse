@@ -16,7 +16,7 @@ import {
 } from "@/lib/labels";
 
 export const metadata: Metadata = {
-  title: "Case file — Timbre",
+  title: "Case file — Deepfake Recourse",
 };
 
 export const dynamic = "force-dynamic";
@@ -75,7 +75,7 @@ export default async function CaseFilePage({
         <header className="border-b-2 border-ink pb-6">
           <div className="flex items-center justify-between">
             <span className="font-mono text-sm tracking-tight">
-              timbre<span className="text-accent">*</span>
+              deepfake recourse<span className="text-accent">*</span>
             </span>
             <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
               Case file
@@ -169,7 +169,7 @@ export default async function CaseFilePage({
               </div>
             ) : c.triage?.routedOut ? (
               <p className="font-serif text-base leading-relaxed text-ink/70">
-                No notice was drafted. This case was routed out, and Timbre does
+                No notice was drafted. This case was routed out, and Deepfake Recourse does
                 not draft for routed-out cases. See the triage read above for
                 where to go instead.
               </p>
@@ -183,7 +183,7 @@ export default async function CaseFilePage({
 
         <footer className="mt-12 border-t-2 border-ink pt-6">
           <p className="font-mono text-[0.7rem] leading-relaxed text-muted">
-            Timbre assembled this file. Timbre drafts; a human files. Nothing in
+            Deepfake Recourse assembled this file. Deepfake Recourse drafts; a human files. Nothing in
             this file has been sent. This is not legal advice. Verify current
             law before acting.
           </p>
