@@ -53,6 +53,16 @@ export async function POST(request: Request) {
   if (!existing) {
     return NextResponse.json({ ok: false, error: "Case not found." }, { status: 404 });
   }
+  if (existing.sample) {
+    return NextResponse.json(
+      {
+        ok: false,
+        error:
+          "Sample cases are read-only worked examples. Start your own intake to run the pipeline.",
+      },
+      { status: 409 },
+    );
+  }
   if (!existing.triage) {
     return NextResponse.json(
       { ok: false, error: "Run triage before drafting." },

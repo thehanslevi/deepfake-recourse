@@ -13,7 +13,12 @@ import type {
   TriageRead,
 } from "./types";
 
-// Seed source for the data-access layer.
+// Canonical source of the three seeded sample cases.
+//
+// These rows live in the database (deepfake_recourse.cases, sample = true);
+// this file is the reviewable source of truth they are generated from. If a
+// sample changes here, re-serialize and upsert it into the database. The
+// runtime data layer reads only from the database.
 //
 // These three cases are CLEARLY FICTIONAL worked examples. They let a visitor
 // click through a finished case in seconds without entering anything real. Two

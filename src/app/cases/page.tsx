@@ -28,9 +28,14 @@ export default async function CasesPage() {
         <div aria-hidden className="mt-5 h-px w-10 bg-accent" />
 
         <div className="mt-8 flex flex-wrap items-end justify-between gap-4">
-          <h1 className="font-serif text-3xl font-medium leading-[1.1] tracking-[-0.01em] md:text-5xl">
-            Cases
-          </h1>
+          <div>
+            <h1 className="font-serif text-3xl font-medium leading-[1.1] tracking-[-0.01em] md:text-5xl">
+              Cases
+            </h1>
+            <p className="mt-3 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+              The three samples, plus cases created in this browser.
+            </p>
+          </div>
           <Link
             href="/intake"
             className="font-mono text-sm no-underline hover:underline"

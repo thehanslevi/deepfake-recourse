@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { addCase } from "@/lib/data";
+import { getOrCreateOwnerId } from "@/lib/owner";
 import { rateLimit } from "@/lib/rate-limit";
 import type {
   ClonedWhat,
@@ -57,6 +58,9 @@ export async function createCase(form: FormData): Promise<void> {
     state: str(form, "state", MAX.state),
   };
 
-  const created = await addCase(intake);
+  // Mark ownership: the anonymous per-browser cookie. The case is private to
+  // this browser from the moment it is created.
+  const ownerId = await getOrCreateOwnerId();
+  const created = await addCase(intake, ownerId);
   redirect(`/cases/${created.id}`);
 }

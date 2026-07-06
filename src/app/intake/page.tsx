@@ -33,8 +33,8 @@ export default function IntakePage() {
             This is a demonstration build. The three{" "}
             <Link href="/cases">sample cases</Link> are the best way to see the
             full pipeline from intake to drafted notice. A case you create here
-            is not saved permanently yet, so it may not be here if you come back
-            later.
+            is saved and stays private to this browser. Nobody else can see it,
+            and it is not linked to your name or any account.
           </p>
         </div>
 

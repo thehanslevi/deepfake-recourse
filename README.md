@@ -45,7 +45,7 @@ This is a working version-one. It is deployed, it runs the full pipeline end to 
 
 The architecture was built so the obvious next steps are additions, not rewrites:
 
-- **A real database** so people can return to their own cases over time.
+- **A real database** so people can return to their own cases over time. (Shipped: cases now persist, private to the browser that created them, with no account required.)
 - **More states**, added as structured data as their statutes mature.
 - **The federal lane.** If a national right-of-publicity law passes, it slots in as a new instrument rather than a redesign.
 - **A handoff directory** connecting people to legal aid and attorneys when a case needs one.
@@ -54,7 +54,7 @@ The point of version one is to prove the recourse loop works and is responsible.
 
 ## How it is built
 
-Next.js (App Router) and TypeScript, deployed on Vercel. The legal content lives as structured, verifiable data rather than logic buried in code, so it can be maintained and audited as the law changes. The two AI steps run server-side. The data layer is isolated behind a clean interface so the move to a real database is a contained change.
+Next.js (App Router) and TypeScript, deployed on Vercel. The legal content lives as structured, verifiable data rather than logic buried in code, so it can be maintained and audited as the law changes. The two AI steps run server-side. The data layer is isolated behind a clean interface; it now runs on Postgres (Supabase), a swap that changed one file and no callers.
 
 ## Why I built it
 
